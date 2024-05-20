@@ -67,6 +67,8 @@ while(password!=2024){
 //question 2 start//
 system("pause");
 system("cls");
+while(1){
+system("cls");
 puts("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 puts("|  a. Draw a right triangle    |");
 puts("|  b. Show multiplication table|");
@@ -101,8 +103,22 @@ switch(input)
 	system("cls");
 	break;
 		
+	case'c':
+	case'C':
+	system("cls");
+	printf("Continue?(y/n)");
+	fflush(stdin);
+	input=getch();
+	if(input==78 || input==110){
+		return 0;
+	}
+	else if(input==89 || input==121){
+		break;
+	}
+	getch();
+	break;
+	
 }
 
-
-return 0;
+}
 }
