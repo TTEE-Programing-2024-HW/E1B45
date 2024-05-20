@@ -2,8 +2,8 @@
 #include<stdlib.h>
 #include<conio.h>
 int main(){
-	int password,number,number1,i,j;
-	char input,h;
+	int password,number,number1,i,j,row;
+	char input,h,word;
 	//question 1 start//
 puts("E1B45  E1B45  E1B45  E1B45");
 puts(" E1B45  E1B45  E1B45  E1B4");
@@ -82,6 +82,23 @@ switch(input)
 {
 	case'A':
 	case'a':
+		printf("Please enter any word\n");
+		system("pause");
+		system("cls");
+		word=getch();
+		if(word>='a'&& word<='n'||word>='A'&&word<='N'){
+			row=word-'a'+1;
+			for(i=0;i<row;i++){
+				for(j=0;j<=i;j++){
+					printf("%c",word-j);
+					}
+				printf("\n");
+			}
+		}
+			getch();
+			system("cls");
+			break;
+			
 		
 	case'b':
 	case'B':
@@ -109,7 +126,13 @@ switch(input)
 	printf("Continue?(y/n)");
 	fflush(stdin);
 	input=getch();
-	if(input==78 || input==110){
+	
+	while(input!=78&&input!=110&&input!=89&&input!=121){
+	printf("ERROR!! Please enter again");
+	input=getch();
+	fflush(stdin);
+	}
+		if(input==78 || input==110){
 		return 0;
 	}
 	else if(input==89 || input==121){
